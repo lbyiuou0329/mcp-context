@@ -1,0 +1,16 @@
+{
+  "description": "mcp-context PostToolUse — intercepts large MCP tool output, indexes into FTS5, replaces with summary",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/posttooluse.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}

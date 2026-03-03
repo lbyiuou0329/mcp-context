@@ -1,0 +1,36 @@
+{
+  "name": "mcp-context",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Claude Code plugin that indexes large tool output into a searchable FTS5 knowledge base via PostToolUse hooks. No execution engine, no credentials, no network — just index and search.",
+  "license": "MIT",
+  "bin": {
+    "mcp-context": "./build/server.js"
+  },
+  "files": [
+    "build",
+    "hooks",
+    ".claude-plugin"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsx src/server.ts",
+    "test": "npx tsx tests/store.test.ts && npx tsx tests/hook.test.ts && npx tsx tests/e2e.test.ts && npx tsx tests/enhancements.test.ts",
+    "test:enhancements": "npx tsx tests/enhancements.test.ts",
+    "test:store": "npx tsx tests/store.test.ts",
+    "test:hook": "npx tsx tests/hook.test.ts",
+    "test:e2e": "npx tsx tests/e2e.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "better-sqlite3": "^12.6.2",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.19.11",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0"
+  }
+}

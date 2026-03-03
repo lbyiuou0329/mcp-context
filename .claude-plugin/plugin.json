@@ -1,0 +1,12 @@
+{
+  "name": "mcp-context",
+  "version": "0.1.0",
+  "description": "Indexes large MCP tool output into a searchable FTS5 knowledge base via PostToolUse hooks. No execution engine, no credentials, no network.",
+  "license": "MIT",
+  "mcpServers": {
+    "mcp-context": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/build/server.js"]
+    }
+  }
+}
